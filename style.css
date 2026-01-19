@@ -61,3 +61,18 @@ button {
   background: green;
   color: white;
 }
+
+.start:hover {
+  background: #00cc00;
+}
+.stop:hover {
+  background: #ff3333;
+}
+button:active {
+  transform: scale(0.95);
+}
+button:focus {
+  outline: none;
+}
+
+
