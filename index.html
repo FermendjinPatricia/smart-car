@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Car Control</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Status / Logs</h1>
+
+  <div class="panel">
+    <h2>Status curent</h2>
+    <div id="status">
+      <p>🚗 Stare: <span id="state">---</span></p>
+      <p>🚦 Semn: <span id="label">---</span></p>
+      <p>⚡ Viteză: <span id="speed">---</span></p>
+      <p>⏱ Update: <span id="time">---</span></p>
+    </div>
+
+    <h2>Logs</h2>
+    <div id="logs"></div>
+  </div>
+
+  <div class="buttons">
+    <button id="stopBtn" class="stop">STOP</button>
+    <button id="startBtn" class="start">PORNEȘTE</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
