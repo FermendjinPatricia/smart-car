@@ -3,6 +3,7 @@
 // =======================
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-database.js";
+import { set } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-database.js";
 
 // =======================
 // FIREBASE CONFIG
@@ -35,6 +36,7 @@ const timeEl  = document.getElementById("time");
 // READ STATUS (LIVE)
 // =======================
 const statusRef = ref(db, "status");
+const controlRef = ref(db, "control/allow_motion");
 
 onValue(statusRef, (snapshot) => {
   const data = snapshot.val();
@@ -46,3 +48,11 @@ onValue(statusRef, (snapshot) => {
   speedEl.innerText = data.speed ?? "---";
   timeEl.innerText  = new Date(data.timestamp * 1000).toLocaleTimeString();
 });
+
+document.getElementById("stopBtn").onclick = () => {
+  set(controlRef, false);
+};
+
+document.getElementById("startBtn").onclick = () => {
+  set(controlRef, true);
+};
